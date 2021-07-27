@@ -1,0 +1,23 @@
+﻿@model Student
+
+@{
+    ViewBag.Titel = " index";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(e => e.id) 
+
+     @Html.EditorFor(e => e.id ,  new { htmlAttributes = new { @class = "form-control" } })
+    <br />
+    @Html.LabelFor(e => e.name) 
+
+    @Html.EditorFor(e => e.name , new { htmlAttributes = new { @class = "form-control" } })
+    <br />
+    @Html.LabelFor(e => e.age)  
+
+    @Html.EditorFor(e => e.age , new { htmlAttributes = new { @class = "form-control" } })
+
+    <input type="submit" value="Edit" />
+
+}

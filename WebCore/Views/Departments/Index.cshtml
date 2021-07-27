@@ -1,0 +1,43 @@
+﻿@model IEnumerable<WebCore.Models.Department>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-danger">Create New</a>
+    @Html.ActionLink("Student","index","Students",null,htmlAttributes:new{@class="btn btn-info"})
+
+</p>
+<table class="table table-bordered table-hover table-striped">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Deptid)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DeptName)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Deptid)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DeptName)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Deptid">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Deptid">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Deptid">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

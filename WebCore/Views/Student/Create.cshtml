@@ -1,0 +1,19 @@
+﻿@model Student
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(e => e.id)
+    @Html.TextBoxFor(e => e.id, new { @class = "form-control" })
+
+    @Html.LabelFor(e => e.name)
+    @Html.TextBoxFor(e => e.name, new { @class = "form-control" }) 
+
+    @Html.LabelFor(e => e.age)
+    @Html.TextBoxFor(e => e.age, new { @class = "form-control" })
+
+    <input type="submit" value="Create" />
+}

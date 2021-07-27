@@ -1,0 +1,37 @@
+﻿@model List<Student>
+
+@{
+    ViewBag.Titel = " index";
+}
+
+<a href="/Student/Create">Create</a>
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>id</th>
+            <th>name</th>
+            <th>age</th>
+            <th>Edit</th>
+            <th>Details</th>
+            <th>Delte</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>@item.id</td>
+            <td>@item.name</td>
+            <td>@item.age</td>
+            <td><a  href="/Student/Edit/@item.id"   >Edit</a> </td>
+            <td><a href="/Student/Details/@item.id" >Details</a> </td>
+                   
+            <td><a href="/Student/Delete/@item.id">Delete</a> </td>
+
+
+        </tr>
+        }
+
+    </tbody>
+
+</table>
